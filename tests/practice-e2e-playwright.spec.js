@@ -4,9 +4,9 @@ import { test, expect, request as playwrightRequest } from '@playwright/test';
 const API_BASE_URL = 'https://api.club-administration.qa.qubika.com';
 
 const ROUTES = {
-  login: '/auth/login',
-  dashboard: '/dashboard',
-  categoryTypes: '/category-type',
+  login: '/#/auth/login',
+  dashboard: '/#/dashboard',
+  categoryTypes: '/#/category-type',
 };
 
 const UI_TEXT = {
@@ -90,6 +90,7 @@ async function registerAdminUserViaApi(apiRequest, userData) {
 async function loginViaUi(page, { email, password }) {
   const { authenticateButton, emailInput, passwordInput, dashboardLink } =
     loginLocators(page);
+
   // The base URL is configured globally in playwright.config.js (use.baseURL),
   await page.goto(ROUTES.login);
 
