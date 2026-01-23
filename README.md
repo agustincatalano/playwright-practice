@@ -13,7 +13,7 @@ What the test does
 How to run
 
 - Install dependencies:
-  npm ci
+  npm i
 
 - Run the Playwright UI runner (headed):
   npx playwright test --headed --ui
